@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PagesSwipe</string>
+
+    <string name="text_new_notif">Create new notification</string>
+    <string name="text_notif">Notification</string>
+    <string name="text_notif_msg">You have created a notification</string>
+
+    <string name="val_text_notif_ch_default">Default</string>
+    <string name="text_notif_ch_default_descr">Default notification channel</string>
+
+</resources>
