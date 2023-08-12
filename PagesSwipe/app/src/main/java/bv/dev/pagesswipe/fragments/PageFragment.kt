@@ -2,6 +2,7 @@ package bv.dev.pagesswipe.fragments
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,16 +46,14 @@ class PageFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        arguments?.takeIf { it.containsKey(ARG_PAGE) }?.apply {
-            number = getInt(ARG_PAGE)
-            binding.tvNumber.text = "${(number + 1)}"
-        }
+        binding.tvNumber.text = "${(number + 1)}"
 
         binding.fabPlus.setOnClickListener {
             pagesControl.addPage()
         }
 
         binding.fabMinus.setOnClickListener {
+            Log.i("log_t", "${number + 1}")
             for (notification in notificationIds) {
                 NotificationUtils.cancelNotification(requireContext(), notification)
             }

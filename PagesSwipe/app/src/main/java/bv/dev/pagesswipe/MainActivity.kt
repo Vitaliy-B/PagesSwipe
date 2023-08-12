@@ -48,8 +48,11 @@ class MainActivity : AppCompatActivity(), PageFragment.PagesControl {
     }
 
     override fun removePage(number: Int) {
-        pagerAdapter.removeFragment(number)
-        pagerAdapter.notifyItemRemoved(number)
+        Log.i("log_t", "${number + 1}")
         binding.viewPager.currentItem--
+        pagerAdapter.removeFragment(number)
+//        pagerAdapter.notifyItemRemoved(number)
+        pagerAdapter.notifyDataSetChanged()
+//        binding.viewPager.currentItem--
     }
 }
